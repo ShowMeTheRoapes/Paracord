@@ -13,3 +13,5 @@
 As per the package.json set up, running `yarn start` will now automatically regenerate the tailwind CSS file.
 
 If you would like to generate it manually (although I have no clue why you would), you may run `npx tailwind build src/css/App.css -o src/generated/tailwind.css`
+
+[Tailwind Documentation Available Here](https://tailwindcss.com/docs/configuration)
