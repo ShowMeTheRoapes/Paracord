@@ -5,10 +5,12 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "tailwindcss": "^1.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "tailwind:css": "npx tailwind build src/css/App.css -o src/generated/tailwind.css",
+    "start": "yarn tailwind:css && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

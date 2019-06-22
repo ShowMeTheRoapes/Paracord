@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './css/App.css';
+import './generated/tailwind.css';
 
 function App() {
   return (
