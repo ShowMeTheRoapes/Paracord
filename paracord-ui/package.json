@@ -12,7 +12,8 @@
     "tailwind:css": "npx tailwind build src/css/App.css -o src/generated/tailwind.css",
     "start": "yarn tailwind:css && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cross-env CI=true && react-scripts test --watchAll=false",
+    "test-watch": "cross-env CI=true && react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -29,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "~5.2.0"
   }
 }
