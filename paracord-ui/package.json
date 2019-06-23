@@ -25,7 +25,9 @@
       "jest": true
     },
     "rules": {
-      "semi": 0
+      "semi": "error",
+      "space-before-function-paren": ["error", "never"],
+      "max-len": ["error", { "code": 120 }]
     }
   },
   "browserslist": {
