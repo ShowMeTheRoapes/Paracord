@@ -2,8 +2,8 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'This will be a pre-commit hook one day'",
-      "pre-push": "cd paracord-ui && echo 'Running frontend tests...' && yarn test && cd ../"
+      "pre-commit": "cd paracord-ui && echo Linting frontend... && yarn lint-fix && cd ../",
+      "pre-push": "cd paracord-ui && echo Running frontend tests... && yarn test && cd ../"
     }
   },
   "devDependencies": {
