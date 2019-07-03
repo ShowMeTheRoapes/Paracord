@@ -2,8 +2,8 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "cd paracord-ui && echo Linting UI files... && yarn lint-fix && cd ../",
-      "pre-push": "cd paracord-ui && echo Running UI tests... && yarn test && cd ../"
+      "pre-commit": "cd paracord-ui && echo Linting UI files... && yarn lint-fix && cd ../server && echo Formatting server files... && mvn fmt:format && cd../",
+      "pre-push": "cd paracord-ui && echo Running UI tests... && yarn test && cd ../server && echo Building server project... && mvn clean install && cd../"
     }
   },
   "devDependencies": {
