@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash": "~4.17.14",
+    "lodash.template": "~4.5.0",
     "react": "~16.8.6",
     "react-dom": "~16.8.6",
     "react-scripts": "3.0.1",
@@ -19,18 +21,38 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": ["standard", "standard-react"],
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
     "parser": "babel-eslint",
     "env": {
       "jest": true
     },
     "rules": {
       "semi": "error",
-      "space-before-function-paren": ["error", "never"],
-      "max-len": ["error", { "code": 120 }],
-      "indent": ["error", 3],
-      "react/jsx-indent": ["error", 3],
-      "react/jsx-indent-props": ["error", 3]
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "max-len": [
+        "error",
+        {
+          "code": 120
+        }
+      ],
+      "indent": [
+        "error",
+        3
+      ],
+      "react/jsx-indent": [
+        "error",
+        3
+      ],
+      "react/jsx-indent-props": [
+        "error",
+        3
+      ]
     }
   },
   "browserslist": {
