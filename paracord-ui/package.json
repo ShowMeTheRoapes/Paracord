@@ -14,7 +14,7 @@
     "tailwind:css": "npx tailwind build src/css/App.css -o src/generated/tailwind.css",
     "start": "yarn tailwind:css && react-scripts start",
     "build": "react-scripts build",
-    "test": "cross-env CI=true && react-scripts test --watchAll=false --bail",
+    "test": "cross-env CI=true && react-scripts test --watchAll=false --bail --verbose",
     "test-watch": "cross-env CI=true && react-scripts test",
     "lint": "eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --fix --ignore-path .gitignore .",
