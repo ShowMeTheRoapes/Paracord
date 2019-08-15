@@ -1,8 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import StrandList from '../Components/StrandList'
+import Strand from '../Components/Strand'
 
-it('contains a StrandList', () => {
+it('contains 3 Strands', () => {
    const wrapper = shallow(<StrandList />)
-   expect(wrapper.contains(<p>I will be the strand list one day!</p>)).toBe(true)
+   expect(wrapper.find(Strand).length).toBe(3)
 })

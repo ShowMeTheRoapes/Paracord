@@ -1,9 +1,12 @@
 import React from 'react'
+import Strand from '../Components/Strand'
 
 function StrandList() {
    return (
       <div id='strand-list'className='bg-gray-600'>
-         <p>I will be the strand list one day!</p>
+         <Strand />
+         <Strand />
+         <Strand />
       </div>
    )
 }
