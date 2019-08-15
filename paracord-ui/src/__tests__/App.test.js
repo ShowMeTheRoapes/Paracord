@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import App from '../App'
-import StrandList from '../StrandList'
+import StrandList from '../Components/StrandList'
 
 it('renders without crashing', () => {
    const div = document.createElement('div')

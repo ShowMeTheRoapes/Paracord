@@ -1,7 +1,7 @@
 
 import React from 'react'
 import './generated/tailwind.css'
-import StrandList from './StrandList'
+import StrandList from './Components/StrandList'
 
 function App() {
    return (
