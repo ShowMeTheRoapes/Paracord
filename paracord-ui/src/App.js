@@ -5,8 +5,10 @@ import StrandList from './Components/StrandList'
 
 function App() {
    return (
-      <div className='App'>
-         <StrandList />
+      <div className='flex'>
+         <div className='w-1/6 bg-gray-500' />
+         <div className='w-4/6 bg-gray-500'><StrandList /></div>
+         <div className='w-1/6 bg-gray-500' />
       </div>
    )
 }

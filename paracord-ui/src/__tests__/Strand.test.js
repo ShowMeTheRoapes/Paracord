@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Strand from '../Components/Strand'
 
-it('contains a paragraph', () => {
-   const wrapper = shallow(<Strand />)
-   expect(wrapper.contains(<p>Strand</p>)).toBe(true)
+it('contains a the passed in name', () => {
+   const wrapper = shallow(<Strand name='Test' />)
+   expect(wrapper.contains('Test')).toBe(true)
 })
