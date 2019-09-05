@@ -4,13 +4,11 @@ echo ***************************************************
 echo **            Building REST server               **
 echo ***************************************************
 cd server
-call mvn clean package || goto :error
-
 
 echo ***************************************************
 echo **             Starting REST server              **
 echo ***************************************************
-start cmd /k "java -jar target/paracord-server-executable.jar && exit"
+start cmd /k "mvn spring-boot:run && exit"
 timeout /t 5 /nobreak > NUL
 echo =========S T A R T E D=========
 cd ..
