@@ -3,7 +3,7 @@ import React from 'react'
 import './generated/tailwind.css'
 import StrandList from './Components/StrandList'
 
-function App() {
+const App: React.FunctionComponent<{}> = () => {
    return (
       <div className='flex'>
          <div className='w-1/6 bg-gray-500' />
