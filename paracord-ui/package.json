@@ -2,15 +2,6 @@
   "name": "paracord-ui",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "lodash": "~4.17.14",
-    "lodash.template": "~4.5.0",
-    "react": "~16.8.6",
-    "react-dom": "~16.8.6",
-    "react-scripts": "3.0.1",
-    "set-value": "~3.0.1",
-    "tailwindcss": "~1.0.4"
-  },
   "scripts": {
     "tailwind:css": "npx tailwind build src/css/App.css -o src/generated/tailwind.css",
     "start": "yarn tailwind:css && react-scripts start",
@@ -33,19 +24,28 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "lodash": "^4.17.14",
+    "lodash.template": "^4.5.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "set-value": "^3.0.1",
+    "tailwindcss": "^1.0.4"
+  },
   "devDependencies": {
-    "@types/jest": "~24.0.18",
-    "@types/node": "~12.7.4",
-    "@types/react": "~16.9.2",
-    "@types/react-dom": "~16.9.0",
-    "@typescript-eslint/eslint-plugin": "~2.2.0",
-    "@typescript-eslint/parser": "~2.2.0",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
     "babel-eslint": "10.0.1",
-    "cross-env": "~5.2.0",
-    "eslint-config-prettier": "~6.3.0",
-    "eslint-config-react": "~1.1.7",
-    "eslint-plugin-prettier": "~3.1.0",
-    "prettier": "~1.18.2",
-    "typescript": "~3.6.3"
+    "cross-env": "^5.2.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.3"
   }
 }
