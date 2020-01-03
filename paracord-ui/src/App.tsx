@@ -1,24 +1,15 @@
 import React from 'react'
-import logo from './logo.svg'
 import './generated/tailwind.css'
+import StrandList from './Components/StrandList'
 
 const App: React.FunctionComponent<{}> = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex">
+      <div className="w-1/6 bg-gray-500" />
+      <div className="w-4/6 bg-gray-500">
+        <StrandList />
+      </div>
+      <div className="w-1/6 bg-gray-500" />
     </div>
   )
 }
