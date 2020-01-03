@@ -2,8 +2,8 @@ package com.showmetheroapes.paracord.models;
 
 public class StrandDTO {
   public static class Request {
-    private String ipAddress;
-    private String name;
+    private String ipAddress = "Not Provided";
+    private String name = "Not Provided";
 
     public Request() {}
 
