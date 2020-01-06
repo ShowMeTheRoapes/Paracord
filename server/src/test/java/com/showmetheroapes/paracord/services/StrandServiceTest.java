@@ -35,7 +35,7 @@ class StrandServiceTest {
   @Test
   public void getAllStrandsReturnsAListOfStrands() {
     // given
-    StrandModel strand = new StrandModel("name1", "127.0.0.1");
+    StrandModel strand = new StrandModel("name1", "127.0.0.1", 25565);
     given(strandRepository.findAll()).willReturn(Collections.singletonList(strand));
 
     // when
@@ -49,16 +49,17 @@ class StrandServiceTest {
   @Test
   public void createStrandReturnsCreatedStrand() {
     // given
-    StrandModel strand = new StrandModel("name1", "127.0.0.1");
+    StrandModel strand = new StrandModel("name1", "127.0.0.1", 25565);
     given(strandRepository.save(any(StrandModel.class))).willReturn(strand);
 
     // when
-    StrandDTO.Request request = new StrandDTO.Request("name1", "127.0.0.1");
+    StrandDTO.Request request = new StrandDTO.Request("name1", "127.0.0.1", 25565);
     StrandModel result = strandService.createStrand(request);
 
     // then
     assertEquals(strand.getIpAddress(), result.getIpAddress());
     assertEquals(strand.getName(), result.getName());
     assertEquals(strand.getId(), result.getId());
+    assertEquals(strand.getPort(), result.getPort());
   }
 }

@@ -30,8 +30,8 @@ public class StrandControllerTest {
   @Test
   public void findAllStrandsReturnsAListOfStrands() throws Exception {
     // given
-    StrandModel strand1 = setupStrandModel("name1", "127.0.0.1");
-    StrandModel strand2 = setupStrandModel("name2", "127.0.0.1");
+    StrandModel strand1 = setupStrandModel("name1", "127.0.0.1", 25565);
+    StrandModel strand2 = setupStrandModel("name2", "127.0.0.1", 25566);
     List<StrandModel> strands = Arrays.asList(strand1, strand2);
     given(strandService.getAllStrands()).willReturn(strands);
 
@@ -44,7 +44,9 @@ public class StrandControllerTest {
         .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
         .andExpect(jsonPath("$.length()", new IsEqual<>(strands.size())))
         .andExpect(jsonPath("$.[0].name", new IsEqual<>(strand1.getName())))
-        .andExpect(jsonPath("$.[0].ipAddress", new IsEqual<>(strand1.getIpAddress())));
+        .andExpect(jsonPath("$.[0].ipAddress", new IsEqual<>(strand1.getIpAddress())))
+        .andExpect(jsonPath("$.[0].port", new IsEqual<>(strand1.getPort())))
+    ;
   }
 
   @Test
@@ -52,7 +54,8 @@ public class StrandControllerTest {
     // given
     String name = "name1";
     String ipAddress = "127.0.0.1";
-    StrandModel strand = setupStrandModel(name, ipAddress);
+    int port = 25565;
+    StrandModel strand = setupStrandModel(name, ipAddress, port);
     given(strandService.createStrand(any(StrandDTO.Request.class))).willReturn(strand);
 
     // when
@@ -61,7 +64,8 @@ public class StrandControllerTest {
             post("/api/v1/strands")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(
-                    String.format("{\"name\": \"%s\", \"ipAddress\": \"%s\"}", name, ipAddress)));
+                    String.format(
+                            "{\"name\": \"%s\", \"ipAddress\": \"%s\", \"port\": %d}", name, ipAddress, port)));
 
     // then
     results
@@ -71,8 +75,8 @@ public class StrandControllerTest {
         .andExpect(jsonPath("$.ipAddress", new IsEqual<>(strand.getIpAddress())));
   }
 
-  private StrandModel setupStrandModel(String name, String ipAddress) {
-    StrandModel strand = new StrandModel(name, ipAddress);
+  private StrandModel setupStrandModel(String name, String ipAddress, int port) {
+    StrandModel strand = new StrandModel(name, ipAddress, port);
     strand.setId(ObjectId.get());
     return strand;
   }
