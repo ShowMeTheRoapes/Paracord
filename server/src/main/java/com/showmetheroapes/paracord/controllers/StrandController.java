@@ -1,37 +1,32 @@
 package com.showmetheroapes.paracord.controllers;
 
-import com.showmetheroapes.paracord.models.StrandDTO.Request;
-import com.showmetheroapes.paracord.models.StrandDTO.Response;
+import com.showmetheroapes.paracord.models.dto.StrandDTO.Request;
+import com.showmetheroapes.paracord.models.dto.StrandDTO.Response;
 import com.showmetheroapes.paracord.services.StrandService;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api/v1/strands", produces = "application/json")
+@RequestMapping(value = "/api/v1/strands")
 public class StrandController {
-  @Autowired private StrandService strandService;
+  private StrandService strandService;
 
-  @GetMapping
-  public List<Response> getAll() {
-    return strandService.getAllStrands().stream()
-        .map(strand -> new Response(strand))
-        .collect(Collectors.toList());
+  @Autowired
+  public StrandController(StrandService strandService) {
+    this.strandService = strandService;
   }
 
-  // Requires the last / because ip addresses have "."
-  @GetMapping("/{ipAddress}/")
-  public Response getByIpAddress(@RequestParam String ipAddress) {
-    return new Response(strandService.getStrandByIpAddress(ipAddress));
+  @GetMapping
+  @ResponseStatus(HttpStatus.OK)
+  public List<Response> getAll() {
+    return strandService.getAllStrands().stream().map(Response::new).collect(Collectors.toList());
   }
 
   @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
   public Response createStrand(@RequestBody Request request) {
     return new Response(strandService.createStrand(request));
   }
