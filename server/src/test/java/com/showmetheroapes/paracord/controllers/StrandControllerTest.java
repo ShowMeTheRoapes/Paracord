@@ -45,8 +45,7 @@ public class StrandControllerTest {
         .andExpect(jsonPath("$.length()", new IsEqual<>(strands.size())))
         .andExpect(jsonPath("$.[0].name", new IsEqual<>(strand1.getName())))
         .andExpect(jsonPath("$.[0].ipAddress", new IsEqual<>(strand1.getIpAddress())))
-        .andExpect(jsonPath("$.[0].port", new IsEqual<>(strand1.getPort())))
-    ;
+        .andExpect(jsonPath("$.[0].port", new IsEqual<>(strand1.getPort())));
   }
 
   @Test
@@ -65,7 +64,8 @@ public class StrandControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(
                     String.format(
-                            "{\"name\": \"%s\", \"ipAddress\": \"%s\", \"port\": %d}", name, ipAddress, port)));
+                        "{\"name\": \"%s\", \"ipAddress\": \"%s\", \"port\": %d}",
+                        name, ipAddress, port)));
 
     // then
     results

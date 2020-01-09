@@ -21,7 +21,8 @@ public class StrandService {
   }
 
   public StrandModel createStrand(Request request) {
-    StrandModel strand = new StrandModel(request.getName(), request.getIpAddress(), request.getPort());
+    StrandModel strand =
+        new StrandModel(request.getName(), request.getIpAddress(), request.getPort());
     return strandRepository.save(strand);
   }
 }
