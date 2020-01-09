@@ -23,6 +23,6 @@ public class StrandModel {
 
   @Override
   public String toString() {
-    return String.format("User{name='%s', ipAddress='%s', port=%d}", name, ipAddress, port);
+    return String.format("Strand{name='%s', ipAddress='%s', port=%d}", name, ipAddress, port);
   }
 }
