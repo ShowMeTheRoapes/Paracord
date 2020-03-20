@@ -9,16 +9,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Setter
 @Getter
+@Builder
 public class StrandModel {
   @Id private ObjectId id;
   private String name;
   private String ipAddress;
   private int port;
+  private boolean isAvailable = false;
 
-  public StrandModel(String name, String ipAddress, int port) {
+  public StrandModel(ObjectId id, String name, String ipAddress, int port, boolean isAvailable) {
+    this.id = id;
     this.name = name;
     this.ipAddress = ipAddress;
     this.port = port;
+    this.isAvailable = isAvailable;
+  }
+
+  public String getFullAddress() {
+    return ipAddress + ":" + port;
   }
 
   @Override
