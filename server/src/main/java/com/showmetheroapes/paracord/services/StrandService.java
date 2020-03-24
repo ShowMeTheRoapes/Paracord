@@ -40,7 +40,6 @@ public class StrandService {
     return strandRepository.save(strand);
   }
 
-  // Run strands check every 10 minutes
   @Scheduled(fixedDelayString = "${schedule.strandAvailabilityMS}")
   public void checkStrandsAvailability() {
     logger.info("Starting Strand availability cron job.");

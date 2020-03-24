@@ -7,5 +7,5 @@ spring:
       uri: "mongodb://localhost/paracord"
 
 schedule:
-  strandAvailabilityMS: 1000
+  strandAvailabilityMS: 600000
 
