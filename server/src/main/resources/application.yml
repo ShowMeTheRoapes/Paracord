@@ -5,3 +5,7 @@ spring:
       host: "http://localhost/"
       port: 27017
       uri: "mongodb://localhost/paracord"
+
+schedule:
+  strandAvailabilityMS: 600000
+

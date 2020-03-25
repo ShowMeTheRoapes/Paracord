@@ -76,7 +76,7 @@ public class StrandControllerTest {
   }
 
   private StrandModel setupStrandModel(String name, String ipAddress, int port) {
-    StrandModel strand = new StrandModel(name, ipAddress, port);
+    StrandModel strand = StrandModel.builder().name(name).ipAddress(ipAddress).port(port).build();
     strand.setId(ObjectId.get());
     return strand;
   }
