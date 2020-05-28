@@ -4,5 +4,5 @@ spring:
       uri: "mongodb://paracord-db:27017/paracord"
 
 schedule:
-  strandAvailabilityMS: 600000
+  strandAvailabilityExpression: "*/30 * * * *"
 

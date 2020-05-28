@@ -40,7 +40,7 @@ public class StrandService {
     return strandRepository.save(strand);
   }
 
-  @Scheduled(fixedDelayString = "${schedule.strandAvailabilityMS}")
+  @Scheduled(cron = "${schedule.strandAvailabilityExpression}")
   public void checkStrandsAvailability() {
     logger.info("Starting Strand availability cron job.");
     List<StrandModel> strands = strandRepository.findAll();
