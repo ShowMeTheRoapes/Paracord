@@ -1,0 +1,29 @@
+version: '3'
+services:
+  ui:
+    build: paracord-ui/
+    container_name: paracord-ui
+    ports: 
+      - 3000:3000
+    depends_on:
+      - api
+  api:
+    build: server/
+    container_name: paracord-api
+    ports: 
+      - 8080:8080
+    depends_on:
+      - db
+    external_links:
+      - paracord-db
+  db:
+    container_name: paracord-db
+    image: mongo
+    ports: 
+      - 27017:27017
+    volumes:
+      - db-data:/data/db
+
+# Creates persistant storage for the database on host machine
+volumes:
+  db-data:
