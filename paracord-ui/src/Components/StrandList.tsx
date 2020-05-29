@@ -1,13 +1,22 @@
 import React from 'react'
 import Strand from '../Components/Strand'
+import { Container, Col, Row } from 'reactstrap'
 
 const StrandList: React.FunctionComponent = () => {
   return (
-    <div id="strand-list" className="flex content-around flex-wrap h-48">
-      <Strand name="Test" />
-      <Strand name="AbcDeF" />
-      <Strand name="1234" />
-    </div>
+    <Container>
+      <Row className="text-center">
+        <Col>
+          <Strand name="Strand1" />
+        </Col>
+        <Col>
+          <Strand name="Strand2" />
+        </Col>
+        <Col>
+          <Strand name="Strand3" />
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
