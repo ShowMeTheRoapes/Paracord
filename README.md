@@ -1,13 +1,11 @@
 # Paracord
 A ReactJS front-end and Java JAX-RS REST api web project that will hold random useful tools for us and friends with various scopes.
+## Dependencies
+Docker
 
-# Run
-|CLI|Command|
-|---|-------|
-|Powershell| `.\start.cmd`|
-|Git Bash on Windows|`start start.cmd`|
-|Windows CMD|`start.cmd`|
+## Run
+`docker-compose build` -- Builds all required docker containers from the respective Dockerfiles.
 
-Or
+`docker-compose up` -- Starts all of the docker containers, networks, and dependencies. Mounts a persistant volume for the mongodb to connect to.
 
-Go into each project and run the commands
+`docker-compose down` -- Cleans up all of the docker artifacts created by the `docker-compose up`.

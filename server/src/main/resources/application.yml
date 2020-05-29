@@ -1,11 +1,8 @@
 spring:
   data:
     mongodb:
-      database: paracord
-      host: "http://localhost/"
-      port: 27017
-      uri: "mongodb://localhost/paracord"
+      uri: "mongodb://paracord-db:27017/paracord"
 
 schedule:
-  strandAvailabilityMS: 600000
+  strandAvailabilityExpression: "*/30 * * * *"
 
