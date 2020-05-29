@@ -6,9 +6,9 @@ import StrandList from './Components/StrandList'
 
 const App: React.FunctionComponent<{}> = () => {
   return (
-    <div>
+    <div className="bg-light">
       <NavigationBar />
-      <div className="App">
+      <div className="my-32">
         <StrandList />
       </div>
     </div>
