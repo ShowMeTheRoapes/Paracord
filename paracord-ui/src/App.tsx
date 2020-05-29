@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './css/App.css'
 import './generated/tailwind.css'
 import NavigationBar from './Components/NavigationBar'
 import StrandList from './Components/StrandList'
