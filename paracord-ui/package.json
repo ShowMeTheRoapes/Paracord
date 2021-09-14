@@ -33,7 +33,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.0.1",
     "reactstrap": "^8.4.1",
-    "set-value": "^3.0.1",
+    "set-value": "^4.0.1",
     "tailwindcss": "^1.0.4"
   },
   "devDependencies": {
